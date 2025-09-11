@@ -4,7 +4,7 @@ This is a JavaScript-based web application that fetches and displays current wea
 
 Overview
 
-The application consists of a single JavaScript file that interacts with an HTML page and optional CSS for styling. When a user submits a city name via a form, the app fetches weather data from the OpenWeatherMap API and updates the page with the results. It handles errors gracefully by displaying an error message if the API request fails.
+The application consists of a single JavaScript file that interacts with an HTML page and a CSS for styling. When a user submits a city name via a form, the app fetches weather data from the OpenWeatherMap API and updates the page with the results. It handles errors gracefully by displaying an error message if the API request fails.
 
 Code Explanation
 
@@ -18,7 +18,7 @@ const cityInputEl = document.getElementById("city-input");
 const formEl = document.querySelector("form");
 ```
 
-- `apikey`: Stores the API key for OpenWeatherMap. **Note**: In a production environment, API keys should be stored securely (e.g., in environment variables) rather than hardcoded.
+- `apikey`: Stores the API key for OpenWeatherMap.
 - `weatherDataEl`: References the HTML element with `id="weather-data"`, which contains child elements to display the weather icon, temperature, description, and details.
 - `cityInputEl`: References the HTML input element with `id="city-input"`, where the user enters the city name.
 - `formEl`: References the HTML `<form>` element using `document.querySelector`, which contains the city input field and a submit button.
@@ -41,46 +41,6 @@ formEl.addEventListener("submit", (event) => {
 Purpose: Captures the user’s city input when the form is submitted and triggers the API request.
 
 3. The `getWeatherData` Function
-
-async function getWeatherData(cityValue) {
-  try {
-    const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${apikey}&units=metric`
-    );
-
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-
-    const data = await response.json();
-
-    const temperature = Math.round(data.main.temp);
-    const description = data.weather[0].description;
-    const icon = data.weather[0].icon;
-    const details = [
-      `Feels like: ${Math.round(data.main.feels_like)}`,
-      `Humidity: ${data.main.humidity}%`,
-      `Wind speed: ${data.wind.speed} m/s`,
-    ];
-
-    weatherDataEl.querySelector(
-      ".icon"
-    ).innerHTML = `<img src="http://openweathermap.org/img/wn/${icon}.png" alt="Weather Icon">`;
-    weatherDataEl.querySelector(
-      ".temperature"
-    ).textContent = `${temperature}°C`;
-    weatherDataEl.querySelector(".description").textContent = description;
-    weatherDataEl.querySelector(".details").innerHTML = details
-      .map((detail) => `<div>${detail}</div>`)
-      .join("");
-  } catch (error) {
-    weatherDataEl.querySelector(".icon").innerHTML = "";
-    weatherDataEl.querySelector(".temperature").textContent = "";
-    weatherDataEl.querySelector(".description").textContent =
-      "An error happened, please try again later";
-    weatherDataEl.querySelector(".details").innerHTML = "";
-  }
-}
 
 - Async/Await: The function is marked `async` to handle asynchronous API requests using `await`.
 - Try-Catch Block: Handles potential errors (e.g., invalid city or network issues).
