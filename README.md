@@ -6,9 +6,9 @@ HTML, CSS and JS (JavaScript). Building 60 projects to learn HTML, CSS and JavaS
 
 2. Configure Git: The most important step for a seamless experience is to configure your Git user name and email. This information is attached to every commit you make. In your VS Code terminal, run the following commands, replacing the placeholders with your information:
 
-  git config --global user.name "Your Name"
+      git config --global user.name "Your Name"
   
-  git config --global user.email "your.email@example.com"
+      git config --global user.email "your.email@example.com"
   
 This is a one-time setup that applies to all your repositories.
 
