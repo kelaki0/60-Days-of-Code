@@ -15,11 +15,11 @@ This is a JavaScript-based web application that allows users to create, edit, an
 
 Overview
 
-The application consists of a single JavaScript file that interacts with an HTML page and optional CSS for styling. Users can add new notes by clicking a button, edit notes by typing in textareas, and delete notes via a double-click confirmation. The notes are saved in `localStorage` for persistence.
+The application consists of a single JavaScript file that interacts with an HTML page and a CSS for styling. Users can add new notes by clicking a button, edit notes by typing in textareas, and delete notes via a double-click confirmation. The notes are saved in `localStorage` for persistence.
 
 Code Explanation
 
-Below is a detailed breakdown of the JavaScript code, explaining each component and its functionality.
+Below is a breakdown of the JavaScript code, explaining each component and its functionality.
 
 1. Variable Declarations and Setup
 
