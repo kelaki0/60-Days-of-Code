@@ -4,11 +4,11 @@ This is a JavaScript-based web application that calculates a user's Body Mass In
 
 Overview
 
-The application consists of a single JavaScript file that interacts with an HTML page and optional CSS for styling. When the user enters their height and weight and clicks a button, the app calculates the BMI, displays the numerical result, and indicates the corresponding weight condition based on standard BMI categories.
+The application consists of a single JavaScript file that interacts with an HTML page and a CSS for styling. When the user enters their height and weight and clicks a button, the app calculates the BMI, displays the numerical result, and indicates the corresponding weight condition based on standard BMI categories.
 
 Code Explanation
 
-Below is a detailed breakdown of the JavaScript code, explaining each component and its functionality.
+Below is a breakdown of the JavaScript code, explaining each component and its functionality.
 
 1. Variable Declarations and Setup
 
